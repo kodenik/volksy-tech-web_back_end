@@ -6,7 +6,7 @@ function updateStudentGradeByCity(students, city, newGrades) {
     return [];
   }
 
-  const stCity = students.filter((students) => students.location === city);
+  const stCity = students.filter((student) => student.location === city);
 
   const studentsGraded = stCity.map((student) => {
     const gradeFilter = newGrades.filter(
@@ -22,12 +22,12 @@ function updateStudentGradeByCity(students, city, newGrades) {
     }
 
     return {
-      ...students,
+      ...student,
       grade,
     };
-   });
+  });
 
-   return studentsGraded;
-  }
+  return studentsGraded;
+}
 
-  export default updateStudentGradeByCity;
+export default updateStudentGradeByCity;
